@@ -1,15 +1,11 @@
 GirlsMusic::Application.routes.draw do
-  resources :albums
+  resources :artists do
+    resources :albums 
+  end
 
-
-  resources :artists
-
-
-  resources :tracks
-
-
-  resources :posts
-
+  resources :albums do
+    resources :tracks
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -13,7 +13,15 @@ DatabaseCleaner.clean
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-1.upto(10).each do |i|
-  # artist = Artist.create({:name => "artist #{i}", :description => "this is artist #{i}"})
-  Artist.make!
+1.upto(5).each do |i|
+  artist = Artist.make!
+
+  1.upto(5).each do |j|
+    album = Album.make!(:artist => artist)
+
+    1.upto(5).each do |k|
+      Track.make!(:album => album)
+    end
+  end
+
 end

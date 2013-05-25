@@ -18,12 +18,12 @@ Album.blueprint do
   artist
   name {"Album #{sn}"}
   description {"This is album #{sn}"}
-  pub_date Date.today - rand(5).to_i
+  pub_data {Date.today}
 end
 
 Track.blueprint do 
   album
-  number rand(10)
+  number {rand(10)}
   name {"Track #{sn}"}
-  duration rand(100)
+  duration {rand(100)}
 end

@@ -2,7 +2,11 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Artist.find(params[:artist_id]).albums
+    if params[:artist_id]
+      @albums = Artist.find(params[:artist_id]).albums
+    else
+      @albums = Album.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb

@@ -2,10 +2,13 @@
 div class="page-header"
   h1=t '.title', :default => model_class.model_name.human
 
-.row
+.row style='margin-bottom:30px;'
   .span2 
     = 'Picture'
   .span7
     p = @artist.name
     p = @artist.sex
     p = @artist.description
+
+
+= render :partial => 'albums/album', :collection => @artist.albums

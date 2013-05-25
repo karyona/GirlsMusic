@@ -11,13 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130525054347) do
+ActiveRecord::Schema.define(:version => 20130525063319) do
+
+  create_table "artists", :force => true do |t|
+    t.string   "name"
+    t.boolean  "sex"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "tracks", :force => true do |t|
+    t.integer  "number"
+    t.string   "name"
+    t.integer  "duration"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

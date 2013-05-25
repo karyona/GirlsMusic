@@ -1,4 +1,10 @@
 GirlsMusic::Application.routes.draw do
+  resources :artists
+
+
+  resources :tracks
+
+
   resources :posts
 
 
